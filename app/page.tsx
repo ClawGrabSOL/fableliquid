@@ -330,7 +330,7 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="flex h-[calc(100vh-57px)]">
+      <div className="flex h-[calc(100vh-57px)] overflow-hidden">
         {/* Markets sidebar */}
         <aside className="w-72 border-r border-[#1a1a1a] overflow-y-auto">
           <div className="p-4">
@@ -402,16 +402,33 @@ export default function Home() {
           </div>
 
           {/* Chart and trading */}
-          <div className="flex-1 flex">
-            {/* Chart */}
-            <div className="flex-1 p-4">
-              <ChartArea />
+          <div className="flex-1 flex overflow-hidden">
+            {/* Chart and positions */}
+            <div className="flex-1 flex flex-col overflow-hidden">
+              {/* Chart */}
+              <div className="h-[350px] p-4">
+                <ChartArea />
+              </div>
+              
+              {/* Positions / Recent trades */}
+              <div className="flex-1 border-t border-[#1a1a1a] p-4 overflow-y-auto">
+                <div className="flex gap-6 text-sm mb-4">
+                  <button className="text-white font-semibold">Positions (0)</button>
+                  <button className="text-[#666]">Open Orders (0)</button>
+                  <button className="text-[#666]">Trade History</button>
+                </div>
+                <div className="text-center py-12 text-[#666]">
+                  <div className="text-4xl mb-2">📊</div>
+                  <p>No open positions</p>
+                  <p className="text-sm mt-1">Connect wallet to start trading</p>
+                </div>
+              </div>
             </div>
 
             {/* Order book and trading panel */}
-            <div className="w-80 border-l border-[#1a1a1a] flex flex-col">
+            <div className="w-96 border-l border-[#1a1a1a] flex flex-col overflow-y-auto">
               {/* Order book */}
-              <div className="flex-1 p-4 border-b border-[#1a1a1a] overflow-y-auto">
+              <div className="p-4 border-b border-[#1a1a1a]">
                 <div className="text-sm font-semibold mb-4">Order Book</div>
                 <OrderBook />
               </div>
