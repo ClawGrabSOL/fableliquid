@@ -151,7 +151,7 @@ function TradingPanel() {
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
             placeholder="0.00"
-            className="w-full bg-[#0a0a0a] border border-[#1a1a1a] rounded-lg px-4 py-3 text-lg font-mono focus:outline-none focus:border-[#ff6b35]"
+            className="w-full bg-[#0a0a0a] border border-[#1a1a1a] rounded-lg px-4 py-3 text-lg font-mono focus:outline-none focus:border-[#5eead4]"
           />
           <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#666]">USDC</span>
         </div>
@@ -170,7 +170,7 @@ function TradingPanel() {
       <div>
         <div className="flex justify-between text-sm mb-2">
           <span className="text-[#666]">Leverage</span>
-          <span className="text-[#ff6b35] font-mono">{leverage}x</span>
+          <span className="text-[#5eead4] font-mono">{leverage}x</span>
         </div>
         <input
           type="range"
@@ -178,7 +178,7 @@ function TradingPanel() {
           max="50"
           value={leverage}
           onChange={(e) => setLeverage(Number(e.target.value))}
-          className="w-full accent-[#ff6b35]"
+          className="w-full accent-[#5eead4]"
         />
         <div className="flex justify-between text-xs text-[#666] mt-1">
           <span>1x</span>
@@ -277,7 +277,7 @@ function RiskModal({ onAccept }: { onAccept: () => void }) {
         </div>
         <button
           onClick={onAccept}
-          className="w-full py-4 bg-[#ff6b35] text-white font-semibold rounded-xl hover:bg-[#ff6b35]/90 transition"
+          className="w-full py-4 bg-[#5eead4] text-black font-semibold rounded-xl hover:bg-[#5eead4]/90 transition"
         >
           I Understand, Continue
         </button>
@@ -324,7 +324,7 @@ export default function Home() {
               <a href="#" className="text-[#666] hover:text-white">Docs</a>
             </nav>
           </div>
-          <button className="px-5 py-2 bg-[#ff6b35] text-white font-semibold rounded-lg hover:bg-[#ff6b35]/90 transition pulse-glow">
+          <button className="px-5 py-2 bg-[#5eead4] text-black font-semibold rounded-lg hover:bg-[#5eead4]/90 transition pulse-glow">
             Connect Wallet
           </button>
         </div>
@@ -337,7 +337,7 @@ export default function Home() {
             <input
               type="text"
               placeholder="Search markets..."
-              className="w-full bg-[#0a0a0a] border border-[#1a1a1a] rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-[#ff6b35]"
+              className="w-full bg-[#0a0a0a] border border-[#1a1a1a] rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-[#5eead4]"
             />
           </div>
           <div className="text-xs text-[#666] px-4 pb-2 flex justify-between">
@@ -349,7 +349,7 @@ export default function Home() {
               key={market.symbol}
               onClick={() => setSelectedMarket(market)}
               className={`w-full px-4 py-3 flex items-center justify-between hover:bg-[#0a0a0a] transition ${
-                selectedMarket.symbol === market.symbol ? 'bg-[#0a0a0a] border-l-2 border-[#ff6b35]' : ''
+                selectedMarket.symbol === market.symbol ? 'bg-[#0a0a0a] border-l-2 border-[#5eead4]' : ''
               }`}
             >
               <div className="flex items-center gap-3">
